@@ -1,0 +1,28 @@
+{
+  "name": "hearthstonejson",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "prebublish": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HearthSim/npm-hearthstonejson.git"
+  },
+  "author": "Benedict Etzel <developer@beheh.de>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/HearthSim/npm-hearthstonejson/issues"
+  },
+  "homepage": "https://github.com/HearthSim/npm-hearthstonejson#readme",
+  "devDependencies": {
+    "@types/node": "^6.0.36",
+    "babel-core": "^6.13.2",
+    "babel-loader": "^6.2.5",
+    "babel-preset-es2015": "^6.13.2",
+    "ts-loader": "^0.8.2",
+    "typescript": "^2.0.0",
+    "webpack": "^1.13.2"
+  }
+}
