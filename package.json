@@ -1,6 +1,6 @@
 {
   "name": "hearthstonejson",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "main": "index.js",
   "scripts": {
     "prepublish": "webpack --mode=build",
