@@ -15,6 +15,7 @@ export default class HearthstoneJSON {
 	public fallback: boolean = null;
 	public prefix: string = "hsjson-";
 	protected sourceUrl: (build: number|"latest", locale: string) => string;
+	public redirected: number = 0;
 
 	constructor(sourceUrl?: (build: number|"latest", locale: string) => string, backend?: StorageBackend) {
 		this.sourceUrl = sourceUrl ? sourceUrl : (build: number|"latest", locale: string) => "https://api.hearthstonejson.com/v1/" + build + "/" + locale + "/cards.json";
@@ -28,15 +29,22 @@ export default class HearthstoneJSON {
 		return this.prefix + build + "_" + locale;
 	}
 
-	protected fetch(build: number|"latest", locale: string, cb?: (data: any[]) => void, errorCb?: () => void): void {
-		let url = this.sourceUrl(build, locale);
+	protected fetch(build: number|"latest", locale: string, cb?: (data: any[]) => void, errorCb?: () => void, url?: string): void {
+		if(typeof url === "undefined") {
+			url = this.sourceUrl(build, locale);
+		}
 		let options = URL.parse(url) as any;
 		options.withCredentials = false;
 		options.method = "GET";
 		let request = https.request(options);
 		request.once("response", (message: IncomingMessage) => {
 			if(message.statusCode != 200) {
-				errorCb();
+				if(message.statusCode >= 301 && message.statusCode <= 302 && this.redirected <= 5) {
+					this.redirected++;
+					this.fetch(build, locale, cb, errorCb, message.headers.locations);
+					this.redirected = 0;
+					return;
+				}
 				return;
 			}
 			let data = "";
