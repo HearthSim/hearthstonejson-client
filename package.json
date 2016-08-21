@@ -3,7 +3,7 @@
   "version": "0.0.4",
   "main": "index.js",
   "scripts": {
-    "prebublish": "webpack"
+    "prepublish": "webpack"
   },
   "repository": {
     "type": "git",
