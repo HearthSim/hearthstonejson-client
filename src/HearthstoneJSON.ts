@@ -6,7 +6,7 @@ import {IncomingMessage} from "http";
 import {StorageBackend} from "./StorageBackend";
 import LocalStorageBackend from "./LocalStorageBackend";
 
-export default class MetaDataManager {
+export default class HearthstoneJSON {
 
 	public defaultLocale: string = "enUS";
 	public backend: StorageBackend;
@@ -23,7 +23,7 @@ export default class MetaDataManager {
 
 	protected generateKey(build: number|"latest", locale: string): string {
 		if (build === "latest") {
-			throw new Error('Will not generate key for "latest" metadata');
+			throw new Error('Refusing to generate key for "latest" metadata');
 		}
 		return this.prefix + build + "_" + locale;
 	}
@@ -33,12 +33,9 @@ export default class MetaDataManager {
 		let options = URL.parse(url) as any;
 		options.withCredentials = false;
 		options.method = "GET";
-		console.log("outgoing", options);
 		let request = https.request(options);
 		request.once("response", (message: IncomingMessage) => {
-			console.log("incoming");
 			if(message.statusCode != 200) {
-				console.log("error");
 				errorCb();
 				return;
 			}
@@ -49,9 +46,7 @@ export default class MetaDataManager {
 			message.on("error", () => {
 				errorCb();
 			});
-			console.log("go?");
 			message.on("end", () => {
-				console.log("done");
 				try {
 					let cards = JSON.parse(data);
 					cb(cards);
@@ -62,13 +57,7 @@ export default class MetaDataManager {
 			});
 		});
 		request.on("error", (e) => {
-			console.error(e);
-		});
-		request.on("end", (e) => {
-			console.log("end", e);
-		});
-		request.on("close", (e) => {
-			console.log("close", e);
+			errorCb();
 		});
 		request.end();
 	}
@@ -89,10 +78,10 @@ export default class MetaDataManager {
 			build = "latest";
 		}
 		this.cached = false;
-		let key = this.generateKey(build, locale);
 		if (build !== "latest") {
 			this.fetched = false;
 			this.fallback = false;
+			let key = this.generateKey(build, locale);
 			if (this.backend.has(key)) {
 				this.cached = true;
 				cb(this.backend.get(key));
@@ -106,7 +95,7 @@ export default class MetaDataManager {
 			}
 			cb(data);
 			if (build !== "latest") {
-				this.backend.set(key, data);
+				this.backend.set(this.generateKey(build, locale), data);
 			}
 		}, () => {
 			if(build === "latest") {
