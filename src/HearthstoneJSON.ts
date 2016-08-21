@@ -17,7 +17,7 @@ export default class HearthstoneJSON {
 	protected sourceUrl: (build: number|"latest", locale: string) => string;
 
 	constructor(sourceUrl?: (build: number|"latest", locale: string) => string, backend?: StorageBackend) {
-		this.sourceUrl = sourceUrl ? sourceUrl : (build: number|"latest", locale: string) => "http://api.hearthstonejson.com/v1/" + build + "/" + locale + "/cards.json";
+		this.sourceUrl = sourceUrl ? sourceUrl : (build: number|"latest", locale: string) => "https://api.hearthstonejson.com/v1/" + build + "/" + locale + "/cards.json";
 		this.backend = backend ? backend : new LocalStorageBackend();
 	}
 
