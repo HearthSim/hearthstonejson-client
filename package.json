@@ -3,7 +3,8 @@
   "version": "0.0.5",
   "main": "index.js",
   "scripts": {
-    "prepublish": "webpack"
+    "prepublish": "webpack --mode=build",
+    "build": "webpack --mode=build"
   },
   "repository": {
     "type": "git",
