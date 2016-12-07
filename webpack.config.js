@@ -6,7 +6,7 @@ module.exports = {
 	output: {
 		filename: "index.js",
 		library: "hearthstonejson",
-		libraryTarget: "commonjs2",
+		libraryTarget: "umd",
 	},
 	resolve: {
 		root: path.resolve("./src"),
