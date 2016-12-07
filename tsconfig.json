@@ -8,10 +8,5 @@
     "removeComments": true,
     "noLib": false,
     "sourceMap": true
-  },
-  "filesGlob": [
-    "src/**/*.ts"
-  ],
-  "files": [
-  ]
+  }
 }
