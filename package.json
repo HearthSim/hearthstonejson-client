@@ -1,6 +1,6 @@
 {
   "name": "hearthstonejson",
-  "version": "0.0.12",
+  "version": "0.1.0",
   "description": "HearthstoneJSON client for browsers and Node",
   "keywords": [
     "hearthstone",
