@@ -4,7 +4,7 @@ node_js:
 script:
   - npm build
 before_deploy:
-  - npm run prepublish
+  - npm run prepublishOnly
 deploy:
   provider: npm
   email: benedict@hearthsim.net

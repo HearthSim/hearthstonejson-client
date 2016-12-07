@@ -3,7 +3,7 @@
   "version": "0.0.12",
   "main": "dist/HearthstoneJSON.js",
   "scripts": {
-    "prepublish": "tsc",
+    "prepublishOnly": "tsc",
     "build": "tsc",
     "dev": "tsc --watch"
   },
