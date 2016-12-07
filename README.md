@@ -1,6 +1,20 @@
 # HearthstoneJSON Client
+[![Travis](https://img.shields.io/travis/HearthSim/npm-hearthstonejson/master.svg)](https://travis-ci.org/HearthSim/npm-hearthstonejson)
+[![npm](https://img.shields.io/npm/v/hearthstonejson.svg)](http://npmjs.com/package/hearthstonejson)
 
-This library is a HearthstoneJSON.com client.
+Fetches data from [HearthstoneJSON](https://hearthstonejson.com/). Builds are cached in LocalStorage if available.
+
+
+## Install
+
+Install the package from npm using your favourite package manager:
+
+```
+npm install hearthstonejson
+```
+
+In order to use this package in a browser you'll need something like Webpack or Browserify.
+
 
 ## Example
 
@@ -13,6 +27,7 @@ hsjson.get(13619, function(cards) {
 });
 ```
 
+
 ## Typings
 
-Typings are included as `index.d.ts`.
+Typings for Typescript are included as `index.d.ts`.
