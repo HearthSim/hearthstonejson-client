@@ -37,10 +37,10 @@ export default class HearthstoneJSON {
 		let request = https.request(options);
 		request.once("response", (message: IncomingMessage) => {
 			if(message.statusCode != 200) {
-				if(message.statusCode >= 301 && message.statusCode <= 302 && this.redirected <= 5) {
+				if(message.statusCode >= 301 && message.statusCode <= 302 && this.redirected < 5) {
+					const target = message.headers.location;
 					this.redirected++;
-					this.fetch(build, locale, cb, errorCb, message.headers.locations);
-					this.redirected = 0;
+					this.fetch(build, locale, cb, errorCb, target);
 					return;
 				}
 				return;
@@ -94,6 +94,7 @@ export default class HearthstoneJSON {
 				return;
 			}
 		}
+		this.redirected = 0;
 		this.fetch(build, locale, (data: any[]) => {
 			this.fetched = true;
 			if(!this.fallback) {
