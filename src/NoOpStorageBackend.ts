@@ -13,5 +13,4 @@ export default class NoOpStorageBackend implements StorageBackend {
 	public get(key: string): any {
 		return null;
 	}
-
 }

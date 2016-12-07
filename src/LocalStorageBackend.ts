@@ -44,5 +44,4 @@ export default class LocalStorageBackend implements StorageBackend {
 		}
 		return JSON.parse(localStorage[key]);
 	}
-
 }
