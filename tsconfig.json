@@ -1,11 +1,12 @@
 {
   "compilerOptions": {
     "declaration": false,
-    "target": "es6",
+    "target": "es5",
+    "outDir": "dist/",
     "moduleResolution": "node",
     "isolatedModules": false,
     "noImplicitAny": false,
-    "removeComments": true,
+    "removeComments": false,
     "noLib": false,
     "sourceMap": true
   }

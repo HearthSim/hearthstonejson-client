@@ -1,5 +1,3 @@
-/// <reference path="../node_modules/@types/node/index.d.ts"/>
-
 import * as https from "https";
 import * as URL from "url";
 import {IncomingMessage} from "http";
