@@ -3,6 +3,7 @@ import * as URL from "url";
 import {IncomingMessage} from "http";
 import {StorageBackend} from "./StorageBackend";
 import LocalStorageBackend from "./LocalStorageBackend";
+import CacheProxy from "./CacheProxy";
 
 export default class HearthstoneJSON {
 
@@ -17,7 +18,7 @@ export default class HearthstoneJSON {
 
 	constructor(sourceUrl?: (build: number|"latest", locale: string) => string, backend?: StorageBackend) {
 		this.sourceUrl = sourceUrl ? sourceUrl : (build: number|"latest", locale: string) => "https://api.hearthstonejson.com/v1/" + build + "/" + locale + "/cards.json";
-		this.backend = backend ? backend : new LocalStorageBackend();
+		this.backend = backend ? backend : new CacheProxy(new LocalStorageBackend());
 	}
 
 	public get(build: number|"latest", locale: string, cb: (data: any[]) => void): void {

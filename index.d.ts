@@ -5,6 +5,12 @@ declare module "hearthstonejson" {
 		get(key: string): any;
 	}
 
+	export class CacheProxy implements StorageBackend {
+		public has(key: string): boolean;
+		public set(key: string, value: any): void;
+		public get(key: string): any;
+	}
+
 	export class LocalStorageBackend implements StorageBackend {
 		public has(key: string): boolean;
 		public set(key: string, value: any): void;
