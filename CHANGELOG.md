@@ -1,3 +1,11 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
+
+## [Unreleased]
+
+## 0.1.0 - 2016-12-07
+### Added
+- Code for initial release
+
+[Unreleased]: https://github.com/HearthSim/npm-hearthstonejson/compare/0.1.0...HEAD
