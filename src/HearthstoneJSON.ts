@@ -21,7 +21,7 @@ export default class HearthstoneJSON {
 		this.backend = backend ? backend : new CacheProxy(new LocalStorageBackend());
 	}
 
-	public get(build: number|"latest", locale: string, cb: (data: any[]) => void): void {
+	public get(build: number|"latest", locale: string, cb: (data: any[], build?: number|"latest", locale?: string) => void): void {
 		if (typeof locale === "function" && typeof cb === "undefined") {
 			cb = locale as (data: any[]) => void;
 			locale = this.defaultLocale;
@@ -41,14 +41,20 @@ export default class HearthstoneJSON {
 			}
 		}
 		this.redirected = 0;
-		this.fetch(build, locale, (data: any[]) => {
+		this.fetch(build, locale, (data: any[], receivedBuild?: number|"latest", receivedLocale?: string) => {
+			if (!receivedBuild) {
+				receivedBuild = build;
+			}
+			if (!receivedLocale) {
+				receivedLocale = locale;
+			}
 			this.fetched = true;
 			if (!this.fallback) {
 				this.fallback = false;
 			}
-			cb(data);
-			if (build !== "latest") {
-				this.backend.set(this.generateKey(build, locale), data);
+			cb(data, receivedBuild, receivedLocale);
+			if (receivedBuild !== "latest") {
+				this.backend.set(this.generateKey(receivedBuild, receivedLocale), data);
 			}
 		}, () => {
 			if (build === "latest") {
@@ -77,7 +83,7 @@ export default class HearthstoneJSON {
 		return this.prefix + build + "_" + locale;
 	}
 
-	protected fetch(build: number|"latest", locale: string, cb?: (data: any[]) => void, errorCb?: () => void, url?: string): void {
+	protected fetch(build: number|"latest", locale: string, cb?: (data: any[], build: number|"latest", locale: string) => void, errorCb?: () => void, url?: string): void {
 		if (typeof url === "undefined") {
 			url = this.sourceUrl(build, locale);
 		}
@@ -88,9 +94,24 @@ export default class HearthstoneJSON {
 		request.once("response", (message: IncomingMessage) => {
 			if (message.statusCode != 200) {
 				if (message.statusCode >= 301 && message.statusCode <= 302 && this.redirected < 5) {
+					// redirects
 					const target = message.headers.location;
 					this.redirected++;
 					this.fetch(build, locale, cb, errorCb, target);
+					return;
+				}
+				if (message.statusCode >= 400 && message.statusCode <= 499) {
+					// bad requests
+					if (build !== "latest") {
+						// build fallback
+						this.fetch("latest", this.defaultLocale, cb, errorCb);
+						return;
+					}
+					if (locale !== this.defaultLocale) {
+						// locale fallback
+						this.fetch(build, this.defaultLocale, cb, errorCb);
+						return;
+					}
 					return;
 				}
 				return;
@@ -105,7 +126,7 @@ export default class HearthstoneJSON {
 			message.on("end", () => {
 				try {
 					let cards = JSON.parse(data);
-					cb(cards);
+					cb(cards, build, locale);
 				}
 				catch (e) {
 					errorCb();

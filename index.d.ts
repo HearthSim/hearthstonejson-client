@@ -35,8 +35,8 @@ declare module "hearthstonejson" {
 
 		constructor(sourceUrl?: (build: number|"latest", locale: string) => string, backend?: StorageBackend);
 
-		public get(build: number|"latest", cb: (data: any[]) => void): void;
-		public get(build: number|"latest", locale: string, cb: (data: any[]) => void): void;
+		public get(build: number|"latest", cb: (data: any[], build?: number|"latest", locale?: string) => void): void;
+		public get(build: number|"latest", locale: string, cb: (data: any[], build?: number|"latest", locale?: string) => void): void;
 
 		public getLatest(cb: (data: any[]) => void): void;
 		public getLatest(locale: string, cb: (data: any[]) => void): void;
