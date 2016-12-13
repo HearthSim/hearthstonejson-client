@@ -2,9 +2,7 @@ language: node_js
 node_js:
   - "7"
 script:
-  - npm build
-before_deploy:
-  - npm run prepublishOnly
+  - npm run build
 deploy:
   provider: npm
   email: benedict@hearthsim.net
