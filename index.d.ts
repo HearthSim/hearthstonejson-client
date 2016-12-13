@@ -24,6 +24,15 @@ declare module "hearthstonejson" {
 	}
 
 	export default class HearthstoneJSON {
+		public defaultLocale: string;
+		public backend: StorageBackend;
+		public cached: boolean;
+		public fetched: boolean;
+		public fallback: boolean;
+		public prefix: string;
+		public sourceUrl: (build: number|"latest", locale: string) => string;
+		public redirected: number;
+
 		constructor(sourceUrl?: (build: number|"latest", locale: string) => string, backend?: StorageBackend);
 
 		public get(build: number|"latest", cb: (data: any[]) => void): void;

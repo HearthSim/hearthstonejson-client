@@ -13,7 +13,7 @@ export default class HearthstoneJSON {
 	public fetched: boolean = null;
 	public fallback: boolean = null;
 	public prefix: string = "hsjson-";
-	protected sourceUrl: (build: number|"latest", locale: string) => string;
+	public sourceUrl: (build: number|"latest", locale: string) => string;
 	public redirected: number = 0;
 
 	constructor(sourceUrl?: (build: number|"latest", locale: string) => string, backend?: StorageBackend) {

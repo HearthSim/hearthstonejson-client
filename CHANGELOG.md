@@ -3,6 +3,11 @@ All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
+### Added
+- Add missing definitions to index.d.ts
+
+### Changed
+- Make `HearthstoneJSON.sourceUrl` public
 
 ## [0.1.1] - 2016-12-12
 ### Added
