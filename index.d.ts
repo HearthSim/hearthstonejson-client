@@ -1,4 +1,7 @@
 declare module "hearthstonejson" {
+	export type Build = number|"latest";
+	export type Locale = string;
+
 	export interface StorageBackend {
 		has(key: string): boolean;
 		set(key: string, value: any): void;
@@ -30,15 +33,15 @@ declare module "hearthstonejson" {
 		public fetched: boolean;
 		public fallback: boolean;
 		public prefix: string;
-		public sourceUrl: (build: number|"latest", locale: string) => string;
+		public sourceUrl: (build: Build, locale: Locale) => string;
 		public redirected: number;
 
-		constructor(sourceUrl?: (build: number|"latest", locale: string) => string, backend?: StorageBackend);
+		constructor(sourceUrl?: (build: Build, locale: Locale) => string, backend?: StorageBackend);
 
-		public get(build: number|"latest", cb: (data: any[], build?: number|"latest", locale?: string) => void): void;
-		public get(build: number|"latest", locale: string, cb: (data: any[], build?: number|"latest", locale?: string) => void): void;
+		public get(build: Build, cb: (data: any[], build?: Build, locale?: string) => void): void;
+		public get(build: Build, locale: Locale, cb: (data: any[], build?: Build, locale?: string) => void): void;
 
 		public getLatest(cb: (data: any[]) => void): void;
-		public getLatest(locale: string, cb: (data: any[]) => void): void;
+		public getLatest(locale: Locale, cb: (data: any[]) => void): void;
 	}
 }
