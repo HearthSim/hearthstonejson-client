@@ -105,7 +105,7 @@ export default class HearthstoneJSON {
 					// bad requests
 					if (build !== "latest") {
 						// build fallback
-						this.fetch("latest", this.defaultLocale, cb, errorCb);
+						this.fetch("latest", locale, cb, errorCb);
 						return;
 					}
 					if (locale !== this.defaultLocale) {
