@@ -38,10 +38,44 @@ declare module "hearthstonejson" {
 
 		constructor(sourceUrl?: (build: Build, locale: Locale) => string, backend?: StorageBackend);
 
-		public get(build: Build, cb: (data: any[], build?: Build, locale?: string) => void): void;
-		public get(build: Build, locale: Locale, cb: (data: any[], build?: Build, locale?: string) => void): void;
+		public get(build: Build, cb: (data: CardData[], build?: Build, locale?: string) => void): void;
+		public get(build: Build, locale: Locale, cb: (data: CardData[], build?: Build, locale?: string) => void): void;
 
-		public getLatest(cb: (data: any[]) => void): void;
-		public getLatest(locale: Locale, cb: (data: any[]) => void): void;
+		public getLatest(cb: (data: CardData[]) => void): void;
+		public getLatest(locale: Locale, cb: (data: CardData[]) => void): void;
+	}
+
+	export interface CardData {
+		id?: string;
+
+		// enums
+		rarity?: string;
+		faction?: string;
+		set?: string;
+		playerClass?: string;
+		type?: string;
+		race?: string;
+
+		// localized
+		name?: string;
+		text?: string;
+		collectionText?: string;
+		flavor?: string;
+		howToEarn?: string;
+		howToEarnGolden?: string;
+		targetingArrowText?: string;
+		textInPlay?: string;
+
+		// additional
+		collectible?: boolean;
+		cost?: number;
+		attack?: number;
+		health?: number;
+		durability?: number;
+		dust?: number[];
+
+		mechanics?: string[]; // enum
+		artist?: string;
+		texture?: string;
 	}
 }
