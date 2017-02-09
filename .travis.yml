@@ -1,6 +1,9 @@
 language: node_js
 node_js:
   - "7"
+install:
+  - npm install yarn --global
+  - yarn install --pure-lockfile
 script:
   - npm run build
 deploy:
