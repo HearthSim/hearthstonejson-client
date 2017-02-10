@@ -1,1 +1,3 @@
-/src
+/src/
+.travis.yml
+yarn.lock
