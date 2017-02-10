@@ -1,11 +1,8 @@
 language: node_js
 node_js:
   - "7"
-install:
-  - npm install yarn --global
-  - yarn install --pure-lockfile
 script:
-  - npm run build
+  - yarn run build
 deploy:
   provider: npm
   email: benedict@hearthsim.net
@@ -15,6 +12,8 @@ deploy:
     tags: true
     branch: master
     skip_cleanup: true
+cache:
+  yarn: true
 notifications:
   email:
     on_failure: always
