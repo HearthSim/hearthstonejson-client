@@ -6,6 +6,9 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 - Add interface definitions for HearthstoneJSON response
 
+### Changed
+- Upgrade Typescript to 2.2.1
+
 ## [0.2.1] - 2016-12-14
 ### Fixed
 - Keep locale when falling back to latest build
