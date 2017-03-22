@@ -23,7 +23,9 @@
     "dev": "tsc --watch"
   },
   "devDependencies": {
-    "@types/node": "^7.0.5",
     "typescript": "^2.2.1"
+  },
+  "dependencies": {
+    "isomorphic-fetch": "^2.2.1"
   }
 }
