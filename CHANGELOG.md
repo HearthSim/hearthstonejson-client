@@ -3,6 +3,8 @@ All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
+
+## [0.3.0] - 2017-03-23
 ### Added
 - Add interface definitions for HearthstoneJSON response
 
@@ -30,7 +32,8 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 - Code for initial release
 
-[Unreleased]: https://github.com/HearthSim/npm-hearthstonejson/compare/0.2.1...HEAD
+[Unreleased]: https://github.com/HearthSim/npm-hearthstonejson/compare/0.3.0...HEAD
+[0.3.0]: https://github.com/HearthSim/npm-hearthstonejson/compare/0.2.1...0.3.0
 [0.2.1]: https://github.com/HearthSim/npm-hearthstonejson/compare/0.2.0...0.2.1
 [0.2.0]: https://github.com/HearthSim/npm-hearthstonejson/compare/0.1.1...0.2.0
 [0.1.1]: https://github.com/HearthSim/npm-hearthstonejson/compare/0.1.0...0.1.1
