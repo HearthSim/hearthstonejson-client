@@ -1,4 +1,4 @@
-import * as fetch from "isomorphic-fetch";
+import "isomorphic-fetch";
 import {StorageBackend} from "./StorageBackend";
 import NoOpStorageBackend from "./NoOpStorageBackend";
 import LocalStorageBackend from "./LocalStorageBackend";
