@@ -15,7 +15,6 @@ export default class HearthstoneJSON {
 	public defaultLocale = "enUS";
 
 	public cached: boolean | null = null;
-	public fetched: boolean | null = null;
 	public fallback: boolean | null = null;
 
 	constructor(storage?: StorageBackend) {
@@ -52,10 +51,10 @@ export default class HearthstoneJSON {
 		if (!locale) {
 			locale = this.defaultLocale;
 		}
+		this.fallback = false;
 		return this.getSpecificBuild(build, locale).catch(() => {
-			// fall back to latest build
 			this.fallback = true;
-			return this.getLatest(locale);
+			return this.fetchLatestBuild(locale)
 		});
 	}
 
@@ -63,14 +62,17 @@ export default class HearthstoneJSON {
 		if (!locale) {
 			locale = this.defaultLocale;
 		}
-		return this.fetchLatestBuildNumber(locale).then((build: BuildNumber) => this.getSpecificBuild(build, locale));
+		this.fallback = false;
+		return this.fetchLatestBuild(locale);
 	}
 
 	protected getSpecificBuild(build: BuildNumber, locale: Locale): Promise<CardData[]> {
 		const key = this.generateKey(build, locale);
 		if (this.storage.has(key)) {
+			this.cached = true;
 			return Promise.resolve(this.storage.get(key));
 		}
+		this.cached = false;
 		return this.fetchSpecificBuild(build, locale);
 	}
 
@@ -91,6 +93,10 @@ export default class HearthstoneJSON {
 			this.storage.set(key, payload);
 			return payload;
 		});
+	}
+
+	protected fetchLatestBuild(locale: Locale): Promise<CardData[]> {
+		return this.fetchLatestBuildNumber(locale).then((build: BuildNumber) => this.getSpecificBuild(build, locale));
 	}
 
 	protected fetchLatestBuildNumber(locale: Locale): Promise<BuildNumber> {

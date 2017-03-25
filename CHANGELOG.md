@@ -3,6 +3,9 @@ All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
+### Changed
+- Rework status flags
+
 ### Fixed
 - Fix isomorphic-fetch import
 - Fix getSpecificBuild not always returning a Promise

@@ -4,6 +4,9 @@ declare module "hearthstonejson" {
 	export type Locale = string;
 
 	export default class HearthstoneJSON {
+		public readonly cached: boolean;
+		public readonly fallback: boolean;
+
 		get(build: Build, locale?: Locale): Promise<CardData[]>;
 
 		getLatest(locale?: Locale): Promise<CardData[]>;
