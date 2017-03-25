@@ -69,7 +69,7 @@ export default class HearthstoneJSON {
 	protected getSpecificBuild(build: BuildNumber, locale: Locale): Promise<CardData[]> {
 		const key = this.generateKey(build, locale);
 		if (this.storage.has(key)) {
-			return this.storage.get(key);
+			return Promise.resolve(this.storage.get(key));
 		}
 		return this.fetchSpecificBuild(build, locale);
 	}
