@@ -4,7 +4,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
-## [0.3.0] - 2017-03-23
+## [0.3.0] - 2017-03-23 [YANKED]
 ### Added
 - Add interface definitions for HearthstoneJSON response
 
