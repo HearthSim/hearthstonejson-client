@@ -90,8 +90,7 @@ export default class HearthstoneJSON {
 			}
 			return response.json();
 		}).then((payload: CardData[]) => {
-			const key = this.generateKey(build, locale);
-			this.storage.set(key, payload);
+			this.store(build, locale, payload);
 			return payload;
 		});
 	}
@@ -119,6 +118,12 @@ export default class HearthstoneJSON {
 			const buildNumber = +build;
 			return buildNumber;
 		});
+	}
+
+	protected store(buildNumber: BuildNumber, locale: Locale, payload: CardData[]) {
+		const key = this.generateKey(buildNumber, locale);
+		this.storage.set(key, payload);
+		return payload;
 	}
 
 	protected generateKey(build: Build, locale: Locale): string {
