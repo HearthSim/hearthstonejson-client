@@ -78,11 +78,11 @@ export default class HearthstoneJSON {
 
 	protected fetchSpecificBuild(build: BuildNumber, locale: Locale): Promise<CardData[]> {
 		const headers = new Headers();
-		headers.set("content-type", "application/json");
+		headers.set("accept", "application/json; charset=utf-8");
 		return fetch(this.createUrl(build, locale), {
 			method: "GET",
 			mode: "cors",
-			headers: new Headers()
+			headers,
 		}).then((response: Response): Promise<CardData[]> => {
 			const statusCode = response.status;
 			if (statusCode !== 200) {
