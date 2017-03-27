@@ -81,6 +81,7 @@ export default class HearthstoneJSON {
 		headers.set("content-type", "application/json");
 		return fetch(this.createUrl(build, locale), {
 			method: "GET",
+			mode: "cors",
 			headers: new Headers()
 		}).then((response: Response): Promise<CardData[]> => {
 			const statusCode = response.status;
@@ -102,21 +103,16 @@ export default class HearthstoneJSON {
 	protected fetchLatestBuildNumber(locale: Locale): Promise<BuildNumber> {
 		return fetch(this.createUrl("latest", locale), {
 			method: "HEAD",
-			redirect: "manual",
+			mode: "cors",
+			// we have to follow the redirect, since otherwise we get an opaqueredirect
 		}).then((response: Response): BuildNumber => {
 			// we expect to be redirected
 			const statusCode = response.status;
-			if (statusCode !== 302) {
-				throw new Error("Expected status code 302, got " + statusCode);
-			}
-			// get location header
-			const headers = response.headers;
-			const location = headers.get("location");
-			if (!location) {
-				throw new Error("Expected location header in response");
+			if (statusCode !== 200) {
+				throw new Error("Expected status code 200, got " + statusCode);
 			}
 			// extract build number
-			const build = this.extractBuild(location);
+			const build = this.extractBuild(response.url);
 			if (isNaN(+build)) {
 				throw new Error("Expected numeric build number");
 			}
