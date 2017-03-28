@@ -19,9 +19,10 @@ declare module "hearthstonejson" {
 		rarity?: string;
 		faction?: string;
 		set?: string;
-		playerClass?: string;
+		cardClass?: string;
 		type?: string;
 		race?: string;
+		multiClassGroup?: string;
 
 		// localized
 		name?: string;
@@ -31,7 +32,6 @@ declare module "hearthstonejson" {
 		howToEarn?: string;
 		howToEarnGolden?: string;
 		targetingArrowText?: string;
-		textInPlay?: string;
 
 		// additional
 		collectible?: boolean;
@@ -39,9 +39,11 @@ declare module "hearthstonejson" {
 		attack?: number;
 		health?: number;
 		durability?: number;
-		dust?: number[];
+		hideStats?: boolean;
 
+		classes?: string[]; // enum
 		mechanics?: string[]; // enum
+		referencedTags?: string[]; // enum
 		artist?: string;
 		texture?: string;
 	}

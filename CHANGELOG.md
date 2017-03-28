@@ -3,6 +3,18 @@ All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
+### Added
+- Add referencedTags property
+- Add hideStats property
+- Add classes property
+- Add multiClassGroup property
+
+### Changed
+- Rename playerClass to cardClass
+
+### Removed
+- Remove dust property
+- Remove textInPlay property
 
 ## [0.4.0] - 2017-03-27
 ### Changed
