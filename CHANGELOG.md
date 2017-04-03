@@ -8,6 +8,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 - Add hideStats property
 - Add classes property
 - Add multiClassGroup property
+- Add retry behaviour with cache bypass
 
 ### Changed
 - Rename playerClass to cardCass

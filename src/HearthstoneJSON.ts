@@ -73,15 +73,21 @@ export default class HearthstoneJSON {
 			return Promise.resolve(this.storage.get(key));
 		}
 		this.cached = false;
-		return this.fetchSpecificBuild(build, locale);
+		return this.fetchSpecificBuild(build, locale)
+			.catch((error) => {
+				console.log("busting");
+				// possibly invalid CORS header in cache
+				return this.fetchSpecificBuild(build, locale, true);
+			});
 	}
 
-	protected fetchSpecificBuild(build: BuildNumber, locale: Locale): Promise<CardData[]> {
+	protected fetchSpecificBuild(build: BuildNumber, locale: Locale, bypassCache?: boolean): Promise<CardData[]> {
 		const headers = new Headers();
 		headers.set("accept", "application/json; charset=utf-8");
 		return fetch(this.createUrl(build, locale), {
 			method: "GET",
 			mode: "cors",
+			cache: bypassCache ? "reload": "default",
 			headers,
 		}).then((response: Response): Promise<CardData[]> => {
 			const statusCode = response.status;
