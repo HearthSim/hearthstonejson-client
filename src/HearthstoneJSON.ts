@@ -103,6 +103,7 @@ export default class HearthstoneJSON {
 		return fetch(this.createUrl("latest", locale), {
 			method: "HEAD",
 			mode: "cors",
+			cache: "no-store",
 			// we have to follow the redirect, since otherwise we get an opaqueredirect
 		}).then((response: Response): BuildNumber => {
 			// we expect to be redirected

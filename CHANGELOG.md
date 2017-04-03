@@ -10,7 +10,8 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 - Add multiClassGroup property
 
 ### Changed
-- Rename playerClass to cardClass
+- Rename playerClass to cardCass
+- Make latest build number uncacheable
 
 ### Removed
 - Remove dust property
