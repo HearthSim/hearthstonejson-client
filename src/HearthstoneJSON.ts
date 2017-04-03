@@ -75,7 +75,6 @@ export default class HearthstoneJSON {
 		this.cached = false;
 		return this.fetchSpecificBuild(build, locale)
 			.catch((error) => {
-				console.log("busting");
 				// possibly invalid CORS header in cache
 				return this.fetchSpecificBuild(build, locale, true);
 			});
