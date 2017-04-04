@@ -3,6 +3,7 @@ import {StorageBackend} from "./StorageBackend";
 import NoOpStorageBackend from "./NoOpStorageBackend";
 import LocalStorageBackend from "./LocalStorageBackend";
 import CacheProxy from "./CacheProxy";
+import {REVISIONS} from "./constants";
 import {Build, BuildNumber, Locale} from "./types";
 import {CardData} from "hearthstonejson";
 
@@ -68,12 +69,25 @@ export default class HearthstoneJSON {
 
 	protected getSpecificBuild(build: BuildNumber, locale: Locale): Promise<CardData[]> {
 		const key = this.generateKey(build, locale);
+		let bypassCache = false;
 		if (this.storage.has(key)) {
-			this.cached = true;
-			return Promise.resolve(this.storage.get(key));
+			const stored = this.storage.get(key);
+			// verify format
+			if (
+				typeof stored === "object" &&
+				typeof stored["revision"] === "number" &&
+				Array.isArray(typeof stored["cards"])
+			) {
+				if (stored["revision"] === this.getRevision(build)) {
+					this.cached = true;
+					return Promise.resolve(stored["cards"]);
+				}
+			}
+			// local version is not valid or outdated, do a full reload
+			bypassCache = true;
 		}
 		this.cached = false;
-		return this.fetchSpecificBuild(build, locale)
+		return this.fetchSpecificBuild(build, locale, bypassCache)
 			.catch((error) => {
 				// possibly invalid CORS header in cache
 				return this.fetchSpecificBuild(build, locale, true);
@@ -86,7 +100,7 @@ export default class HearthstoneJSON {
 		return fetch(this.createUrl(build, locale), {
 			method: "GET",
 			mode: "cors",
-			cache: bypassCache ? "reload": "default",
+			cache: bypassCache ? "reload" : "default",
 			headers,
 		}).then((response: Response): Promise<CardData[]> => {
 			const statusCode = response.status;
@@ -126,10 +140,17 @@ export default class HearthstoneJSON {
 		});
 	}
 
-	protected store(buildNumber: BuildNumber, locale: Locale, payload: CardData[]) {
+	protected store(buildNumber: BuildNumber, locale: Locale, payload: CardData[]): void {
+		if (!payload.length) {
+			// this doesn't look right - refuse to cache this
+			return;
+		}
 		const key = this.generateKey(buildNumber, locale);
-		this.storage.set(key, payload);
-		return payload;
+
+		this.storage.set(key, {
+			revision: this.getRevision(buildNumber),
+			cards: payload,
+		});
 	}
 
 	protected generateKey(build: Build, locale: Locale): string {
@@ -137,5 +158,13 @@ export default class HearthstoneJSON {
 			throw new Error('Refusing to generate key for "latest" metadata');
 		}
 		return this.storagePrefix + build + "_" + locale;
+	}
+
+	protected getRevision(build: BuildNumber): number {
+		let revision = 0;
+		if (typeof REVISIONS[build] === "number") {
+			revision = REVISIONS[build];
+		}
+		return revision;
 	}
 }
