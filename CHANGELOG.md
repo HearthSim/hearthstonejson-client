@@ -6,7 +6,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ### Fixed
 - Force refresh of 18336
 
-## [0.6.0] - 2017-04-03
+## [0.6.0] - 2017-04-04
 ### Added
 - Add internal mechanism for storage invalidation
 
