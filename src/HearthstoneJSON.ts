@@ -78,7 +78,7 @@ export default class HearthstoneJSON {
 				typeof stored["revision"] === "number" &&
 				Array.isArray(typeof stored["cards"])
 			) {
-				if (stored["revision"] === this.getRevision(build)) {
+				if (stored["revision"] >= this.getRevision(build)) {
 					this.cached = true;
 					return Promise.resolve(stored["cards"]);
 				}
