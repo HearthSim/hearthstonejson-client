@@ -3,6 +3,8 @@ All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
+
+## [0.6.3] - 2017-04-06
 ### Fixed
 - Fix bug preventing cache from working
 
@@ -75,7 +77,8 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 - Code for initial release
 
-[Unreleased]: https://github.com/HearthSim/npm-hearthstonejson/compare/0.6.2...HEAD
+[Unreleased]: https://github.com/HearthSim/npm-hearthstonejson/compare/0.6.3...HEAD
+[0.6.3]: https://github.com/HearthSim/npm-hearthstonejson/compare/0.6.2...0.6.3
 [0.6.2]: https://github.com/HearthSim/npm-hearthstonejson/compare/0.6.1...0.6.2
 [0.6.1]: https://github.com/HearthSim/npm-hearthstonejson/compare/0.6.0...0.6.1
 [0.6.0]: https://github.com/HearthSim/npm-hearthstonejson/compare/0.5.1...0.6.0
