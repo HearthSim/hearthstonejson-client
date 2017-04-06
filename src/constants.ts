@@ -1,3 +1,3 @@
 export const REVISIONS = {
-	18336: 2,
+	18336: 3,
 };
