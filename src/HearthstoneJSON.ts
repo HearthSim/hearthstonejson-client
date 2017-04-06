@@ -76,7 +76,7 @@ export default class HearthstoneJSON {
 			if (
 				typeof stored === "object" &&
 				typeof stored["revision"] === "number" &&
-				Array.isArray(typeof stored["cards"])
+				Array.isArray(stored["cards"])
 			) {
 				if (stored["revision"] >= this.getRevision(build)) {
 					this.cached = true;
