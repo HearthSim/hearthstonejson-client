@@ -86,6 +86,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 - Code for initial release
 
 [Unreleased]: https://github.com/HearthSim/npm-hearthstonejson/compare/0.6.4...HEAD
+[0.6.5]: https://github.com/HearthSim/npm-hearthstonejson/compare/0.6.4...0.6.5
 [0.6.4]: https://github.com/HearthSim/npm-hearthstonejson/compare/0.6.3...0.6.4
 [0.6.3]: https://github.com/HearthSim/npm-hearthstonejson/compare/0.6.2...0.6.3
 [0.6.2]: https://github.com/HearthSim/npm-hearthstonejson/compare/0.6.1...0.6.2
