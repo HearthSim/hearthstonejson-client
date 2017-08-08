@@ -3,6 +3,8 @@ All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
+### Changed
+- Force refresh of 20457
 
 ## [0.6.5] - 2017-04-07
 ### Changed
