@@ -13,6 +13,7 @@
   "license": "ISC",
   "author": "Benedict Etzel <benedict@hearthsim.net>",
   "main": "dist/HearthstoneJSON.js",
+  "types": "./index.d.ts",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/HearthSim/npm-hearthstonejson.git"

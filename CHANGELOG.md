@@ -5,6 +5,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ## [Unreleased]
 ### Added
 - Add dbfId to typings
+- Add types field to package.json
 
 ## [0.6.6] - 2017-08-08
 ### Changed
