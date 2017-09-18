@@ -3,6 +3,8 @@ All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
+### Added
+- Add dbfId to typings
 
 ## [0.6.6] - 2017-08-08
 ### Changed

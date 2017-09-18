@@ -14,6 +14,7 @@ declare module "hearthstonejson" {
 
 	export interface CardData {
 		id?: string;
+		dbfId?: number;
 
 		// enums
 		rarity?: string;
