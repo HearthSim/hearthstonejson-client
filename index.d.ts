@@ -36,10 +36,14 @@ declare module "hearthstonejson" {
 
 		// additional
 		collectible?: boolean;
+		elite?: boolean;
 		cost?: number;
 		attack?: number;
 		health?: number;
 		durability?: number;
+		overload?: number;
+		spellDamage?: number;
+		armor?: number;
 		hideStats?: boolean;
 
 		classes?: string[]; // enum
