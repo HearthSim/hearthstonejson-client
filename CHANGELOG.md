@@ -6,6 +6,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 - Add dbfId to typings
 - Add types field to package.json
+- Add elite, overload, spellDamage, armor to typings
+
+### Removed
+- Remove texture from typings
 
 ## [0.6.6] - 2017-08-08
 ### Changed

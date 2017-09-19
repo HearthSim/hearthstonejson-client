@@ -50,6 +50,5 @@ declare module "hearthstonejson" {
 		mechanics?: string[]; // enum
 		referencedTags?: string[]; // enum
 		artist?: string;
-		texture?: string;
 	}
 }
