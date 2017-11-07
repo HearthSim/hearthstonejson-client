@@ -1,7 +1,6 @@
-import {StorageBackend} from "./StorageBackend";
+import { StorageBackend } from "./StorageBackend";
 
 export default class NoOpStorageBackend implements StorageBackend {
-
 	public has(key: string): boolean {
 		return false;
 	}

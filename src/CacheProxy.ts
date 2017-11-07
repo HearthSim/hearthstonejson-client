@@ -1,7 +1,6 @@
-import {StorageBackend} from "./StorageBackend";
+import { StorageBackend } from "./StorageBackend";
 
 export default class CacheProxy implements StorageBackend {
-
 	private cache: any;
 	public backend: StorageBackend;
 

@@ -2,7 +2,8 @@ language: node_js
 node_js:
   - "7"
 script:
-  - yarn run build
+  - yarn build
+  - yarn lint
 deploy:
   provider: npm
   email: benedict@hearthsim.net

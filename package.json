@@ -21,9 +21,12 @@
   "scripts": {
     "prepublishOnly": "tsc",
     "build": "tsc",
-    "dev": "tsc --watch"
+    "dev": "tsc --watch",
+    "format": "prettier --write \"{src/**/*.ts,*.js,*.ts}\"",
+    "lint": "prettier --list-different \"{src/**/*.ts,*.js,*.ts}\""
   },
   "devDependencies": {
+    "prettier": "^1.8.1",
     "typescript": "^2.2.1"
   },
   "dependencies": {

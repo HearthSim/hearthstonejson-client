@@ -1,14 +1,13 @@
 import "isomorphic-fetch";
-import {StorageBackend} from "./StorageBackend";
+import { StorageBackend } from "./StorageBackend";
 import NoOpStorageBackend from "./NoOpStorageBackend";
 import LocalStorageBackend from "./LocalStorageBackend";
 import CacheProxy from "./CacheProxy";
-import {REVISIONS} from "./constants";
-import {Build, BuildNumber, Locale} from "./types";
-import {CardData} from "hearthstonejson";
+import { REVISIONS } from "./constants";
+import { Build, BuildNumber, Locale } from "./types";
+import { CardData } from "hearthstonejson";
 
 export default class HearthstoneJSON {
-
 	public storage: StorageBackend;
 	public storagePrefix = "hsjson-";
 
@@ -21,11 +20,9 @@ export default class HearthstoneJSON {
 	constructor(storage?: StorageBackend) {
 		if (storage === null) {
 			this.storage = new NoOpStorageBackend();
-		}
-		else if (typeof storage === "undefined") {
+		} else if (typeof storage === "undefined") {
 			this.storage = new CacheProxy(new LocalStorageBackend());
-		}
-		else if (storage) {
+		} else if (storage) {
 			this.storage = storage;
 		}
 	}
@@ -35,9 +32,13 @@ export default class HearthstoneJSON {
 	};
 
 	public extractBuild = (url: string): Build => {
-		const endpointExpression = new RegExp(this.endpoint.replace(/[\/.]/g, "\\$&"));
+		const endpointExpression = new RegExp(
+			this.endpoint.replace(/[\/.]/g, "\\$&")
+		);
 		const pathExpression = /((\d+)|(latest))\/[a-zA-Z]+\/cards\.json/;
-		const pattern = new RegExp("^" + endpointExpression.source + pathExpression.source + "$");
+		const pattern = new RegExp(
+			"^" + endpointExpression.source + pathExpression.source + "$"
+		);
 		const matches = pattern.exec(url);
 		if (!matches) {
 			throw new Error('No build found in url "' + url + '"');
@@ -55,7 +56,7 @@ export default class HearthstoneJSON {
 		this.fallback = false;
 		return this.getSpecificBuild(build, locale).catch(() => {
 			this.fallback = true;
-			return this.fetchLatestBuild(locale)
+			return this.fetchLatestBuild(locale);
 		});
 	}
 
@@ -67,7 +68,10 @@ export default class HearthstoneJSON {
 		return this.fetchLatestBuild(locale);
 	}
 
-	protected getSpecificBuild(build: BuildNumber, locale: Locale): Promise<CardData[]> {
+	protected getSpecificBuild(
+		build: BuildNumber,
+		locale: Locale
+	): Promise<CardData[]> {
 		const key = this.generateKey(build, locale);
 		let bypassCache = false;
 		if (this.storage.has(key)) {
@@ -87,14 +91,17 @@ export default class HearthstoneJSON {
 			bypassCache = true;
 		}
 		this.cached = false;
-		return this.fetchSpecificBuild(build, locale, bypassCache)
-			.catch((error) => {
-				// possibly invalid CORS header in cache
-				return this.fetchSpecificBuild(build, locale, true);
-			});
+		return this.fetchSpecificBuild(build, locale, bypassCache).catch(error => {
+			// possibly invalid CORS header in cache
+			return this.fetchSpecificBuild(build, locale, true);
+		});
 	}
 
-	protected fetchSpecificBuild(build: BuildNumber, locale: Locale, bypassCache?: boolean): Promise<CardData[]> {
+	protected fetchSpecificBuild(
+		build: BuildNumber,
+		locale: Locale,
+		bypassCache?: boolean
+	): Promise<CardData[]> {
 		const headers = new Headers();
 		headers.set("accept", "application/json; charset=utf-8");
 		return fetch(this.createUrl(build, locale), {
@@ -102,20 +109,24 @@ export default class HearthstoneJSON {
 			mode: "cors",
 			cache: bypassCache ? "reload" : "default",
 			headers,
-		}).then((response: Response): Promise<CardData[]> => {
-			const statusCode = response.status;
-			if (statusCode !== 200) {
-				throw new Error("Expected status code 200, got " + statusCode);
-			}
-			return response.json();
-		}).then((payload: CardData[]) => {
-			this.store(build, locale, payload);
-			return payload;
-		});
+		})
+			.then((response: Response): Promise<CardData[]> => {
+				const statusCode = response.status;
+				if (statusCode !== 200) {
+					throw new Error("Expected status code 200, got " + statusCode);
+				}
+				return response.json();
+			})
+			.then((payload: CardData[]) => {
+				this.store(build, locale, payload);
+				return payload;
+			});
 	}
 
 	protected fetchLatestBuild(locale: Locale): Promise<CardData[]> {
-		return this.fetchLatestBuildNumber(locale).then((build: BuildNumber) => this.getSpecificBuild(build, locale));
+		return this.fetchLatestBuildNumber(locale).then((build: BuildNumber) =>
+			this.getSpecificBuild(build, locale)
+		);
 	}
 
 	protected fetchLatestBuildNumber(locale: Locale): Promise<BuildNumber> {
@@ -140,7 +151,11 @@ export default class HearthstoneJSON {
 		});
 	}
 
-	protected store(buildNumber: BuildNumber, locale: Locale, payload: CardData[]): void {
+	protected store(
+		buildNumber: BuildNumber,
+		locale: Locale,
+		payload: CardData[]
+	): void {
 		if (!payload.length) {
 			// this doesn't look right - refuse to cache this
 			return;

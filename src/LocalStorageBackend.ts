@@ -1,7 +1,6 @@
-import {StorageBackend} from "./StorageBackend";
+import { StorageBackend } from "./StorageBackend";
 
 export default class LocalStorageBackend implements StorageBackend {
-
 	private _available(): boolean {
 		try {
 			return "localStorage" in window && window["localStorage"] !== null;
@@ -14,7 +13,7 @@ export default class LocalStorageBackend implements StorageBackend {
 		if (!this._available()) {
 			return false;
 		}
-		return typeof(localStorage[key]) === "string";
+		return typeof localStorage[key] === "string";
 	}
 
 	public set(key: string, value: any): void {
@@ -26,12 +25,10 @@ export default class LocalStorageBackend implements StorageBackend {
 			try {
 				localStorage.setItem(key, compressed);
 				break;
-			}
-			catch (e) {
+			} catch (e) {
 				try {
 					localStorage.removeItem(localStorage.key(0));
-				}
-				catch (e) {
+				} catch (e) {
 					break;
 				}
 			}
