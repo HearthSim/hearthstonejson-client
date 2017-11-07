@@ -8,6 +8,9 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 - Add types field to package.json
 - Add elite, overload, spellDamage, armor to typings
 
+### Changed
+- Force refresh of 22115
+
 ### Removed
 - Remove texture from typings
 
