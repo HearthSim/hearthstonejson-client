@@ -3,6 +3,8 @@ All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
+
+## [0.7.0] - 2017-11-07
 ### Added
 - Add dbfId to typings
 - Add types field to package.json
@@ -99,7 +101,8 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 - Code for initial release
 
-[Unreleased]: https://github.com/HearthSim/npm-hearthstonejson/compare/0.6.6...HEAD
+[Unreleased]: https://github.com/HearthSim/npm-hearthstonejson/compare/0.7.0...HEAD
+[0.7.0]: https://github.com/HearthSim/npm-hearthstonejson/compare/0.6.6...0.7.0
 [0.6.6]: https://github.com/HearthSim/npm-hearthstonejson/compare/0.6.5...0.6.6
 [0.6.5]: https://github.com/HearthSim/npm-hearthstonejson/compare/0.6.4...0.6.5
 [0.6.4]: https://github.com/HearthSim/npm-hearthstonejson/compare/0.6.3...0.6.4
