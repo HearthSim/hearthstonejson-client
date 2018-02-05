@@ -12,24 +12,29 @@
   },
   "license": "ISC",
   "author": "Benedict Etzel <benedict@hearthsim.net>",
-  "main": "dist/HearthstoneJSON.js",
+  "main": "./dist/node/index",
+  "browser": "./dist/browser/index",
   "types": "./index.d.ts",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/HearthSim/npm-hearthstonejson.git"
   },
   "scripts": {
-    "prepublishOnly": "tsc",
-    "build": "tsc",
-    "dev": "tsc --watch",
+    "prepublishOnly": "rollup -c",
+    "build": "rollup -c",
+    "dev": "rollup -cw",
     "format": "prettier --write \"{src/**/*.ts,*.js,*.ts}\"",
     "lint": "prettier --list-different \"{src/**/*.ts,*.js,*.ts}\""
   },
   "devDependencies": {
+    "node-fetch": "^2.0.0",
     "prettier": "^1.8.1",
+    "rollup": "^0.55.3",
+    "rollup-plugin-commonjs": "^8.3.0",
+    "rollup-plugin-json": "^2.3.0",
+    "rollup-plugin-node-resolve": "^3.0.2",
+    "rollup-plugin-typescript": "^0.8.1",
     "typescript": "^2.2.1"
   },
-  "dependencies": {
-    "isomorphic-fetch": "^2.2.1"
-  }
+  "dependencies": {}
 }
