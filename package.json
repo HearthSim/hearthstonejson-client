@@ -36,5 +36,6 @@
     "rollup-plugin-typescript": "^0.8.1",
     "typescript": "^2.2.1"
   },
-  "dependencies": {}
+  "dependencies": {},
+  "sideEffects": false
 }
