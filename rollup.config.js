@@ -12,7 +12,7 @@ export default [
 			{
 				format: "cjs",
 				file: `${pkg.main}.js`,
-				name: "hearthstonejson",
+				name: "hearthstonejson-client",
 			},
 			{
 				format: "es",
@@ -44,7 +44,7 @@ export default [
 			{
 				format: "umd",
 				file: `${pkg.browser}.js`,
-				name: "hearthstonejson",
+				name: "hearthstonejson-client",
 			},
 			{
 				format: "es",

@@ -12,7 +12,7 @@ deploy:
   skip_cleanup: true
   on:
     tags: true
-    repo: HearthSim/npm-hearthstonejson
+    repo: HearthSim/npm-hearthstonejson-client
 cache:
   yarn: true
 notifications:

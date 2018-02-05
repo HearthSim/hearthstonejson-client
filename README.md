@@ -10,7 +10,7 @@ Fetches data from [HearthstoneJSON](https://hearthstonejson.com/). Builds are ca
 Install the package from npm using your favourite package manager:
 
 ```
-$ yarn add hearthstonejson
+$ yarn add hearthstonejson-client
 ```
 
 In order to use this package in a browser you'll need something like Webpack or Browserify.
@@ -19,7 +19,7 @@ In order to use this package in a browser you'll need something like Webpack or 
 ## Example
 
 ```javascript
-import HearthstoneJSON from "hearthstonejson";
+import HearthstoneJSON from "hearthstonejson-client";
 
 var hsjson = new HearthstoneJSON();
 hsjson.get(13619, function(cards) {

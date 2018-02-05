@@ -3,6 +3,8 @@ All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
+### Changed
+- Renamed package to hearthstonejson-client
 
 ## [0.7.1] - 2017-12-07
 ### Changed
@@ -105,20 +107,20 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 - Code for initial release
 
-[Unreleased]: https://github.com/HearthSim/npm-hearthstonejson/compare/0.7.1...HEAD
-[0.7.1]: https://github.com/HearthSim/npm-hearthstonejson/compare/0.7.0...0.7.1
-[0.7.0]: https://github.com/HearthSim/npm-hearthstonejson/compare/0.6.6...0.7.0
-[0.6.6]: https://github.com/HearthSim/npm-hearthstonejson/compare/0.6.5...0.6.6
-[0.6.5]: https://github.com/HearthSim/npm-hearthstonejson/compare/0.6.4...0.6.5
-[0.6.4]: https://github.com/HearthSim/npm-hearthstonejson/compare/0.6.3...0.6.4
-[0.6.3]: https://github.com/HearthSim/npm-hearthstonejson/compare/0.6.2...0.6.3
-[0.6.2]: https://github.com/HearthSim/npm-hearthstonejson/compare/0.6.1...0.6.2
-[0.6.1]: https://github.com/HearthSim/npm-hearthstonejson/compare/0.6.0...0.6.1
-[0.6.0]: https://github.com/HearthSim/npm-hearthstonejson/compare/0.5.1...0.6.0
-[0.5.1]: https://github.com/HearthSim/npm-hearthstonejson/compare/0.5.0...0.5.1
-[0.5.0]: https://github.com/HearthSim/npm-hearthstonejson/compare/0.4.0...0.5.0
-[0.4.0]: https://github.com/HearthSim/npm-hearthstonejson/compare/0.3.0...0.4.0
-[0.3.0]: https://github.com/HearthSim/npm-hearthstonejson/compare/0.2.1...0.3.0
-[0.2.1]: https://github.com/HearthSim/npm-hearthstonejson/compare/0.2.0...0.2.1
-[0.2.0]: https://github.com/HearthSim/npm-hearthstonejson/compare/0.1.1...0.2.0
-[0.1.1]: https://github.com/HearthSim/npm-hearthstonejson/compare/0.1.0...0.1.1
+[Unreleased]: https://github.com/HearthSim/npm-hearthstonejson-client/compare/0.7.1...HEAD
+[0.7.1]: https://github.com/HearthSim/npm-hearthstonejson-client/compare/0.7.0...0.7.1
+[0.7.0]: https://github.com/HearthSim/npm-hearthstonejson-client/compare/0.6.6...0.7.0
+[0.6.6]: https://github.com/HearthSim/npm-hearthstonejson-client/compare/0.6.5...0.6.6
+[0.6.5]: https://github.com/HearthSim/npm-hearthstonejson-client/compare/0.6.4...0.6.5
+[0.6.4]: https://github.com/HearthSim/npm-hearthstonejson-client/compare/0.6.3...0.6.4
+[0.6.3]: https://github.com/HearthSim/npm-hearthstonejson-client/compare/0.6.2...0.6.3
+[0.6.2]: https://github.com/HearthSim/npm-hearthstonejson-client/compare/0.6.1...0.6.2
+[0.6.1]: https://github.com/HearthSim/npm-hearthstonejson-client/compare/0.6.0...0.6.1
+[0.6.0]: https://github.com/HearthSim/npm-hearthstonejson-client/compare/0.5.1...0.6.0
+[0.5.1]: https://github.com/HearthSim/npm-hearthstonejson-client/compare/0.5.0...0.5.1
+[0.5.0]: https://github.com/HearthSim/npm-hearthstonejson-client/compare/0.4.0...0.5.0
+[0.4.0]: https://github.com/HearthSim/npm-hearthstonejson-client/compare/0.3.0...0.4.0
+[0.3.0]: https://github.com/HearthSim/npm-hearthstonejson-client/compare/0.2.1...0.3.0
+[0.2.1]: https://github.com/HearthSim/npm-hearthstonejson-client/compare/0.2.0...0.2.1
+[0.2.0]: https://github.com/HearthSim/npm-hearthstonejson-client/compare/0.1.1...0.2.0
+[0.1.1]: https://github.com/HearthSim/npm-hearthstonejson-client/compare/0.1.0...0.1.1
