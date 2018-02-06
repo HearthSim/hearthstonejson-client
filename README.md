@@ -1,6 +1,6 @@
 # HearthstoneJSON Client
-[![Travis](https://img.shields.io/travis/HearthSim/npm-hearthstonejson/master.svg)](https://travis-ci.org/HearthSim/npm-hearthstonejson)
-[![npm](https://img.shields.io/npm/v/hearthstonejson.svg)](http://npmjs.com/package/hearthstonejson)
+[![Travis](https://img.shields.io/travis/HearthSim/npm-hearthstonejson-client/master.svg)](https://travis-ci.org/HearthSim/npm-hearthstonejson-client)
+[![npm](https://img.shields.io/npm/v/hearthstonejson-client.svg)](http://npmjs.com/package/hearthstonejson-client)
 
 Fetches data from [HearthstoneJSON](https://hearthstonejson.com/). Builds are cached in LocalStorage if available.
 
