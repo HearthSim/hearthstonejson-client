@@ -1,6 +1,6 @@
 language: node_js
 node_js:
-  - "7"
+  - "node"
 script:
   - yarn build
   - yarn lint
@@ -12,7 +12,7 @@ deploy:
   skip_cleanup: true
   on:
     tags: true
-    repo: HearthSim/npm-hearthstonejson-client
+    branch: master
 cache:
   yarn: true
 notifications:
