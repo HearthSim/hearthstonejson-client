@@ -27,7 +27,10 @@ export default class LocalStorageBackend implements StorageBackend {
 				break;
 			} catch (e) {
 				try {
-					localStorage.removeItem(localStorage.key(0));
+					const key = localStorage.key(0);
+					if (key) {
+						localStorage.removeItem(key);
+					}
 				} catch (e) {
 					break;
 				}

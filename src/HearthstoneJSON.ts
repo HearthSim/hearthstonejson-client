@@ -5,7 +5,7 @@ import LocalStorageBackend from "./LocalStorageBackend";
 import CacheProxy from "./CacheProxy";
 import { REVISIONS } from "./constants";
 import { Build, BuildNumber, Locale } from "./types";
-import { CardData } from "hearthstonejson";
+import { CardData } from "hearthstonejson-client";
 
 export default class HearthstoneJSON {
 	public storage: StorageBackend;
@@ -22,7 +22,7 @@ export default class HearthstoneJSON {
 			this.storage = new NoOpStorageBackend();
 		} else if (typeof storage === "undefined") {
 			this.storage = new CacheProxy(new LocalStorageBackend());
-		} else if (storage) {
+		} else {
 			this.storage = storage;
 		}
 	}
@@ -50,13 +50,11 @@ export default class HearthstoneJSON {
 		if (build === "latest") {
 			return this.getLatest(locale);
 		}
-		if (!locale) {
-			locale = this.defaultLocale;
-		}
+		const _locale = locale ? locale : this.defaultLocale;
 		this.fallback = false;
-		return this.getSpecificBuild(build, locale).catch(() => {
+		return this.getSpecificBuild(build, _locale).catch(() => {
 			this.fallback = true;
-			return this.fetchLatestBuild(locale);
+			return this.fetchLatestBuild(_locale);
 		});
 	}
 
@@ -176,9 +174,10 @@ export default class HearthstoneJSON {
 	}
 
 	protected getRevision(build: BuildNumber): number {
+		const _build = "" + build;
 		let revision = 0;
-		if (typeof REVISIONS[build] === "number") {
-			revision = REVISIONS[build];
+		if (typeof REVISIONS[_build] === "number") {
+			revision = REVISIONS[_build];
 		}
 		return revision;
 	}
