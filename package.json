@@ -24,7 +24,8 @@
     "build": "rollup -c",
     "dev": "rollup -cw",
     "format": "prettier --write \"{src/**/*.ts,*.js,*.ts}\"",
-    "lint": "prettier --list-different \"{src/**/*.ts,*.js,*.ts}\""
+    "lint": "prettier --list-different \"{src/**/*.ts,*.js,*.ts}\"",
+    "type-check": "tsc"
   },
   "devDependencies": {
     "node-fetch": "^2.0.0",
