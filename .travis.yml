@@ -14,7 +14,7 @@ jobs:
   include:
     - stage: release
       node_js: "node"
-      env: SCRIPT=build
+      script:
       deploy:
         provider: npm
         email: benedict@hearthsim.net
