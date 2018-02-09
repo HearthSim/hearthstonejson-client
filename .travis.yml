@@ -8,6 +8,7 @@ env:
 script:
   - yarn run $SCRIPT
 stages:
+  - name: test
   - name: release
     if: tag =~ ^v\d
 jobs:
