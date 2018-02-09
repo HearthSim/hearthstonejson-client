@@ -9,7 +9,7 @@ script:
   - yarn run $SCRIPT
 stages:
   - name: release
-    if: branch = master AND tag IS present
+    if: tag =~ ^v\d
 jobs:
   include:
     - stage: release
