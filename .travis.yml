@@ -15,7 +15,8 @@ jobs:
   include:
     - stage: release
       node_js: "node"
-      script: yarn run build
+      env: SCRIPT=build
+      script: yarn run $SCRIPT
       deploy:
         provider: npm
         email: benedict@hearthsim.net
