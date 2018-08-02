@@ -4,6 +4,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+## [0.8.4] - 2018-08-02
+### Changed
+- Invalidated 25770
+
 ## [0.8.3] - 2018-06-14
 ### Fixed
 - Deployment fix

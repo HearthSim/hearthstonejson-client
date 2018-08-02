@@ -4,4 +4,5 @@ export const REVISIONS: { [key: string]: number } = {
 	22115: 1,
 	22611: 1,
 	24769: 1,
+	25770: 1,
 };
