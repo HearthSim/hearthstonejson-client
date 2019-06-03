@@ -3,6 +3,8 @@ All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
+
+## [0.8.5] - 2019-06-03
 ### Changed
 - Invalidated 31268
 
@@ -134,7 +136,8 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 - Code for initial release
 
-[Unreleased]: https://github.com/HearthSim/npm-hearthstonejson-client/compare/v0.8.4...HEAD
+[Unreleased]: https://github.com/HearthSim/npm-hearthstonejson-client/compare/v0.8.5...HEAD
+[0.8.5]: https://github.com/HearthSim/npm-hearthstonejson-client/compare/v0.8.4...v0.8.5
 [0.8.4]: https://github.com/HearthSim/npm-hearthstonejson-client/compare/v0.8.3...v0.8.4
 [0.8.3]: https://github.com/HearthSim/npm-hearthstonejson-client/compare/v0.8.2...v0.8.3
 [0.8.2]: https://github.com/HearthSim/npm-hearthstonejson-client/compare/v0.8.1...v0.8.2
