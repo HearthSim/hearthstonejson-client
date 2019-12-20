@@ -44,6 +44,7 @@ declare module "hearthstonejson-client" {
 		overload?: number;
 		spellDamage?: number;
 		armor?: number;
+		techLevel?: number;
 		hideStats?: boolean;
 
 		classes?: string[]; // enum
