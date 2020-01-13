@@ -1,7 +1,23 @@
 declare module "hearthstonejson-client" {
 	export type BuildNumber = number;
 	export type Build = BuildNumber | "latest";
-	export type Locale = string;
+	export type Locale =
+		| "enUS"
+		| "enGB"
+		| "frFR"
+		| "deDE"
+		| "koKR"
+		| "esES"
+		| "esMX"
+		| "ruRU"
+		| "zhTW"
+		| "zhCN"
+		| "itIT"
+		| "ptBR"
+		| "plPL"
+		| "ptPT"
+		| "jaJP"
+		| "thTH";
 
 	export default class HearthstoneJSON {
 		public readonly cached: boolean;
