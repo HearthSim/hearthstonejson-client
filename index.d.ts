@@ -44,45 +44,47 @@ declare module "hearthstonejson-client" {
 	}
 
 	export enum CardSet {
-		// INVALID = 0,
-		// TEST_TEMPORARY = 1,
-		// DEBUG_SP = "DEBUG_SP",
-		// BLANK = "BLANK",
-		// CHEAT = "CHEAT",
-		// DEMO = "DEMO",
-		// NONE = "NONE",
-		// PROMO = "PROMO",
-		// SLUSH = "SLUSH",
-		// OG_RESERVE = "OG_RESERVE",
-		// KARA_RESERVE = "KARA_RESERVE",
-		// GANGS_RESERVE = "GANGS_RESERVE",
-		// TAVERNS_OF_TIME = "TAVERNS_OF_TIME",
-		Core = "CORE",
-		Expert1 = "EXPERT1",
-		HOF = "HOF",
-		MISSIONS = "MISSIONS",
-		NAXX = "NAXX",
-		GVG = "GVG",
-		BRM = "BRM",
-		TGT = "TGT",
-		CREDITS = "CREDITS",
-		HERO_SKINS = "HERO_SKINS",
-		TB = "TB",
-		LOE = "LOE",
-		OG = "OG",
-		KARA = "KARA",
-		GANGS = "GANGS",
-		UNGORO = "UNGORO",
-		ICECROWN = "ICECROWN",
-		LOOTAPALOOZA = "LOOTAPALOOZA",
-		GILNEAS = "GILNEAS",
-		BOOMSDAY = "BOOMSDAY",
-		TROLL = "TROLL",
-		DALARAN = "DALARAN",
-		ULDUM = "ULDUM",
-		DRAGONS = "DRAGONS",
-		WILD_EVENT = "WILD_EVENT",
-		BATTLEGROUNDS = "BATTLEGROUNDS"
+		// ### STANDARD ###
+		Basic = "CORE",
+		Classic = "EXPERT1",
+
+		TheWitchwood = "GILNEAS",
+		TheBoomsdayProject = "BOOMSDAY",
+		RastakhansRumble = "TROLL",
+		RiseOfShadows = "DALARAN",
+		SaviorsOfUldum = "ULDUM",
+		DescentOfDragons = "DRAGONS",
+
+		// ### WILD ###
+		HallOfFame = "HOF",
+
+		CurseOfNaxxramas = "NAXX",
+		GoblinsVSGnomes = "GVG",
+		BlackrockMountain = "BRM",
+		TheGrandTournament = "TGT",
+		TheLeagueOfExplorers = "LOE",
+		WhispersOfTheOldGods = "OG",
+		OneNightInKarazhan = "KARA",
+		MeanStreetsOfGadgetzan = "GANGS",
+		JourneyToUnGoro = "UNGORO",
+		KnightsOfTheFrozenThrone = "ICECROWN",
+		KoboldsAndCatacombs = "LOOTAPALOOZA",
+
+		// ### OTHER ###
+		/** https://hearthstone.gamepedia.com/Tavern_Brawl */
+		TavernBrawl = "TB",
+		/** https://hearthstone.gamepedia.com/Mission */
+		Missions = "MISSIONS",
+		/** https://hearthstone.gamepedia.com/Battlegrounds */
+		Battlegrounds = "BATTLEGROUNDS",
+		/** https://hearthstone.gamepedia.com/Credits_card */
+		Credits = "CREDITS",
+		/** https://hearthstone.gamepedia.com/Alternate_hero */
+		HeroSkins = "HERO_SKINS",
+		/** https://hearthstone.gamepedia.com/Wild_Event */
+		WildEvent = "WILD_EVENT",
+		/** https://hearthstone.gamepedia.com/The_Taverns_of_Time*/
+		TavernsOfTime = "TAVERNS_OF_TIME"
 	}
 
 	export enum CardType {
@@ -97,7 +99,7 @@ declare module "hearthstonejson-client" {
 
 	export enum Faction {
 		Horde = "HORDE",
-		Alliance = "ALLIANCE",
+		Alliance = "ALLIANCE"
 	}
 
 	export enum MultiClassGroup {
@@ -165,7 +167,7 @@ declare module "hearthstonejson-client" {
 		Free = "FREE",
 		Rare = "RARE",
 		Epic = "EPIC",
-		Legendary = "LEGENDARY",
+		Legendary = "LEGENDARY"
 	}
 
 	export interface CardData {
