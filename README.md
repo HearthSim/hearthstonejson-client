@@ -21,10 +21,8 @@ In order to use this package in a browser you'll need something like Webpack or 
 ```javascript
 import HearthstoneJSON from "hearthstonejson-client";
 
-var hsjson = new HearthstoneJSON();
-hsjson.get(13619, function(cards) {
-    console.log(cards);
-});
+const hsjson = new HearthstoneJSON();
+hsjson.get(13619).then(console.log).catch(console.error);
 ```
 
 
