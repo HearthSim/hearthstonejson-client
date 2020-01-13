@@ -40,7 +40,7 @@ declare module "hearthstonejson-client" {
 		Warlock = "WARLOCK",
 		Warrior = "WARRIOR",
 		Dream = "DREAM ",
-		Neutral = "NEUTRAL"
+		Neutral = "NEUTRAL",
 	}
 
 	export enum CardSet {
@@ -84,7 +84,7 @@ declare module "hearthstonejson-client" {
 		/** https://hearthstone.gamepedia.com/Wild_Event */
 		WildEvent = "WILD_EVENT",
 		/** https://hearthstone.gamepedia.com/The_Taverns_of_Time*/
-		TavernsOfTime = "TAVERNS_OF_TIME"
+		TavernsOfTime = "TAVERNS_OF_TIME",
 	}
 
 	export enum CardType {
@@ -94,18 +94,18 @@ declare module "hearthstonejson-client" {
 		Enchantment = "ENCHANTMENT",
 		Spell = "SPELL",
 		HeroPower = "HERO_POWER",
-		Player = "PLAYER"
+		Player = "PLAYER",
 	}
 
 	export enum Faction {
 		Horde = "HORDE",
-		Alliance = "ALLIANCE"
+		Alliance = "ALLIANCE",
 	}
 
 	export enum MultiClassGroup {
 		GrimyGoons = "GRIMY_GOONS",
 		JadeLotus = "JADE_LOTUS",
-		Kabal = "KABAL"
+		Kabal = "KABAL",
 	}
 
 	export enum Mechanics {
@@ -146,7 +146,7 @@ declare module "hearthstonejson-client" {
 		Untouchable = "UNTOUCHABLE",
 		Windfury = "WINDFURY",
 		ImmuneToSpellpower = "ImmuneToSpellpower",
-		InvisibleDeathrattle = "InvisibleDeathrattle"
+		InvisibleDeathrattle = "InvisibleDeathrattle",
 	}
 
 	export enum Race {
@@ -159,7 +159,7 @@ declare module "hearthstonejson-client" {
 		Murloc = "MURLOC",
 		Pirate = "PIRATE",
 		Totem = "TOTEM",
-		Elemental = "ELEMENTAL"
+		Elemental = "ELEMENTAL",
 	}
 
 	export enum Rarity {
@@ -167,7 +167,7 @@ declare module "hearthstonejson-client" {
 		Free = "FREE",
 		Rare = "RARE",
 		Epic = "EPIC",
-		Legendary = "LEGENDARY"
+		Legendary = "LEGENDARY",
 	}
 
 	export interface CardData {
