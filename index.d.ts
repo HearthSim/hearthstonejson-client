@@ -171,19 +171,19 @@ declare module "hearthstonejson-client" {
 	}
 
 	export interface CardData {
-		id?: string;
-		dbfId?: number;
+		id: string;
+		dbfId: number;
 
 		rarity?: Rarity;
 		faction?: Faction;
-		set?: CardSet;
+		set: CardSet;
 		cardClass?: CardClass;
-		type?: CardType;
+		type: CardType;
 		race?: Race;
 		multiClassGroup?: MultiClassGroup;
 
 		// localized
-		name?: string;
+		name: string;
 		text?: string;
 		collectionText?: string;
 		flavor?: string;
