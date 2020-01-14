@@ -1,31 +1,37 @@
 declare module "hearthstonejson-client" {
 	export type BuildNumber = number;
 	export type Build = BuildNumber | "latest";
-	export type Locale =
-		| "enUS"
-		| "enGB"
-		| "frFR"
-		| "deDE"
-		| "koKR"
-		| "esES"
-		| "esMX"
-		| "ruRU"
-		| "zhTW"
-		| "zhCN"
-		| "itIT"
-		| "ptBR"
-		| "plPL"
-		| "ptPT"
-		| "jaJP"
-		| "thTH";
+	export enum Locale {
+		AmericanEnglish = "enUS",
+		English = "enGB",
+		French = "frFR",
+		German = "deDE",
+		Korean = "koKR",
+		Spanish = "esES",
+		MexicanSpanish = "esMX",
+		Russian = "ruRU",
+		/** Used in Taiwan */
+		TraditionalChinese = "zhTW",
+		/** Used in Mainland China */
+		Chinese = "zhCN",
+		Italian = "itIT",
+		BrazilianPortuguese = "ptBR",
+		Polish = "plPL",
+		Portuguese = "ptPT",
+		Japanese = "jaJP",
+		Thai = "thTH",
+	}
 
 	export default class HearthstoneJSON {
 		public readonly cached: boolean;
 		public readonly fallback: boolean;
 
-		get(build: Build, locale?: Locale): Promise<CardData[]>;
+		get(
+			build: Build,
+			locale?: Locale = Locale.AmericanEnglish
+		): Promise<CardData[]>;
 
-		getLatest(locale?: Locale): Promise<CardData[]>;
+		getLatest(locale?: Locale = Locale.AmericanEnglish): Promise<CardData[]>;
 	}
 
 	export enum CardClass {
