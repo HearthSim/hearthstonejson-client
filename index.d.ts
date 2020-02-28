@@ -4,7 +4,6 @@ declare module "hearthstonejson-client" {
 	export type Locale = string;
 
 	export default class HearthstoneJSON {
-		public readonly cached: boolean;
 		public readonly fallback: boolean;
 
 		get(build: Build, locale?: Locale): Promise<CardData[]>;
@@ -45,6 +44,7 @@ declare module "hearthstonejson-client" {
 		spellDamage?: number;
 		armor?: number;
 		techLevel?: number;
+		battlegroundsPremiumDbfId?: number;
 		hideStats?: boolean;
 
 		classes?: string[]; // enum
