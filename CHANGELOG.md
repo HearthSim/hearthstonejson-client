@@ -4,6 +4,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+## [1.1.0] - 2020-02-28
+### Added
+- Add battlegroundsPremiumDbfId property
+
 ## [1.0.0] - 2020-02-28
 ### Removed
 - Remove StorageBackend API, rely directly on native cache
@@ -140,7 +144,8 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 - Code for initial release
 
-[Unreleased]: https://github.com/HearthSim/npm-hearthstonejson-client/compare/v1.0.0...HEAD
+[Unreleased]: https://github.com/HearthSim/npm-hearthstonejson-client/compare/v1.1.0...HEAD
+[1.1.0]: https://github.com/HearthSim/npm-hearthstonejson-client/compare/v1.0.0...v1.1.0
 [1.0.0]: https://github.com/HearthSim/npm-hearthstonejson-client/compare/v0.8.5...v1.0.0
 [0.8.5]: https://github.com/HearthSim/npm-hearthstonejson-client/compare/v0.8.4...v0.8.5
 [0.8.4]: https://github.com/HearthSim/npm-hearthstonejson-client/compare/v0.8.3...v0.8.4
