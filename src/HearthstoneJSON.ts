@@ -12,21 +12,6 @@ export default class HearthstoneJSON {
 		return this.endpoint + build + "/" + locale + "/cards.json";
 	};
 
-	public extractBuild = (url: string): Build => {
-		const endpointExpression = new RegExp(
-			this.endpoint.replace(/[\/.]/g, "\\$&")
-		);
-		const pathExpression = /((\d+)|(latest))\/[a-zA-Z]+\/cards\.json/;
-		const pattern = new RegExp(
-			"^" + endpointExpression.source + pathExpression.source + "$"
-		);
-		const matches = pattern.exec(url);
-		if (!matches) {
-			throw new Error('No build found in url "' + url + '"');
-		}
-		return matches[1] as Build;
-	};
-
 	public get(build: Build, locale?: Locale): Promise<CardData[]> {
 		if (build === "latest") {
 			return this.getLatest(locale);
@@ -47,10 +32,7 @@ export default class HearthstoneJSON {
 		return this.fetchLatestBuild(locale);
 	}
 
-	protected fetchSpecificBuild(
-		build: BuildNumber,
-		locale: Locale
-	): Promise<CardData[]> {
+	private fetchBuild(build: Build, locale: Locale): Promise<CardData[]> {
 		const headers = new Headers();
 		headers.set("accept", "application/json; charset=utf-8");
 		return fetch(this.createUrl(build, locale), {
@@ -66,31 +48,14 @@ export default class HearthstoneJSON {
 		});
 	}
 
-	protected fetchLatestBuild(locale: Locale): Promise<CardData[]> {
-		return this.fetchLatestBuildNumber(locale).then((build: BuildNumber) =>
-			this.fetchSpecificBuild(build, locale)
-		);
+	protected fetchSpecificBuild(
+		build: BuildNumber,
+		locale: Locale
+	): Promise<CardData[]> {
+		return this.fetchBuild(build, locale);
 	}
 
-	protected fetchLatestBuildNumber(locale: Locale): Promise<BuildNumber> {
-		return fetch(this.createUrl("latest", locale), {
-			method: "HEAD",
-			mode: "cors",
-			cache: "no-store",
-			// we have to follow the redirect, since otherwise we get an opaqueredirect
-		}).then((response: Response): BuildNumber => {
-			// we expect to be redirected
-			const statusCode = response.status;
-			if (statusCode !== 200) {
-				throw new Error("Expected status code 200, got " + statusCode);
-			}
-			// extract build number
-			const build = this.extractBuild(response.url);
-			if (isNaN(+build)) {
-				throw new Error("Expected numeric build number");
-			}
-			const buildNumber = +build;
-			return buildNumber;
-		});
+	protected fetchLatestBuild(locale: Locale): Promise<CardData[]> {
+		return this.fetchBuild("latest", locale);
 	}
 }
