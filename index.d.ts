@@ -47,6 +47,7 @@ declare module "hearthstonejson-client" {
 		battlegroundsPremiumDbfId?: number;
 		battlegroundsNormalDbfId?: number;
 		hideStats?: boolean;
+		hideCost?: boolean;
 
 		classes?: string[]; // enum
 		mechanics?: string[]; // enum
