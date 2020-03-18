@@ -4,6 +4,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+## [1.4.0] - 2020-03-18
+### Added
+- Add battlegroundsHero property
+
 ## [1.3.0] - 2020-03-14
 ### Added
 - Add hideCost property
@@ -152,7 +156,8 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ### Added
 - Code for initial release
 
-[Unreleased]: https://github.com/HearthSim/npm-hearthstonejson-client/compare/v1.3.0...HEAD
+[Unreleased]: https://github.com/HearthSim/npm-hearthstonejson-client/compare/v1.4.0...HEAD
+[1.4.0]: https://github.com/HearthSim/npm-hearthstonejson-client/compare/v1.3.0...v1.4.0
 [1.3.0]: https://github.com/HearthSim/npm-hearthstonejson-client/compare/v1.2.0...v1.3.0
 [1.2.0]: https://github.com/HearthSim/npm-hearthstonejson-client/compare/v1.1.0...v1.2.0
 [1.1.0]: https://github.com/HearthSim/npm-hearthstonejson-client/compare/v1.0.0...v1.1.0
