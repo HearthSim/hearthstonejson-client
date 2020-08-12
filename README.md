@@ -16,18 +16,26 @@ $ yarn add hearthstonejson-client
 In order to use this package in a browser you'll need something like Webpack or Browserify.
 
 
-## Example
+## Examples
 
 ```javascript
 import HearthstoneJSON from "hearthstonejson-client";
 
 var hsjson = new HearthstoneJSON();
-hsjson.get(13619, function(cards) {
-    console.log(cards);
+
+// get the latest data
+hsjson.getLatest().then(cards => {
+  console.log(cards);
 });
+
+// specify a language
+hsjson.getLatest("deDE").then(cards => {/*...*/});
+
+// specify a certain Hearthstone build number
+hsjson.get(54613).then(cards => {/*...*/});
 ```
 
 
 ## Typings
 
-Typings for Typescript are included as `index.d.ts`.
+Typescript typings are included as `index.d.ts` and should automatically be picked up by Typescript.
