@@ -4,6 +4,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+## [1.5.0] - 2021-07-06
+### Added
+- Add battlegroundsDarkmoonPrizeTurn property
+
 ## [1.4.0] - 2020-03-18
 ### Added
 - Add battlegroundsHero property
