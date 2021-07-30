@@ -45,6 +45,7 @@ declare module "hearthstonejson-client" {
 		armor?: number;
 		techLevel?: number;
 		battlegroundsHero?: boolean;
+		battlegroundsSkinParentId?: number;
 		battlegroundsPremiumDbfId?: number;
 		battlegroundsNormalDbfId?: number;
 		battlegroundsDarkmoonPrizeTurn?: number;
