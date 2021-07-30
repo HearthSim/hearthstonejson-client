@@ -4,6 +4,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+## [1.6.0] - 2021-07-30
+### Added
+- Add battlegroundsSkinParentId property
+
 ## [1.5.0] - 2021-07-06
 ### Added
 - Add battlegroundsDarkmoonPrizeTurn property
