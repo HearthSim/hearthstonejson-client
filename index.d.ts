@@ -51,6 +51,7 @@ declare module "hearthstonejson-client" {
 		battlegroundsDarkmoonPrizeTurn?: number;
 		hideStats?: boolean;
 		hideCost?: boolean;
+		isMiniSet?: boolean;
 
 		classes?: string[]; // enum
 		mechanics?: string[]; // enum
