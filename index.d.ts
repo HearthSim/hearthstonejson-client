@@ -87,13 +87,13 @@ declare module "hearthstonejson-client" {
 
 	export interface AbilityData {
 		id?: number;
-		name?: string | {[key: string]: string};
+		name?: string | { [key: string]: string };
 		tiers?: AbilityTier[];
 	}
 
 	export interface SpecializationData {
 		id?: number;
-		name?: string | {[key: string]: string};
+		name?: string | { [key: string]: string };
 		abilities?: AbilityData[];
 	}
 
@@ -104,7 +104,7 @@ declare module "hearthstonejson-client" {
 		defaultSkinDbfId?: number;
 		equipment?: EquipmentData[];
 		name?: string;
-		shortName?: string | {[key: string]: string};
+		shortName?: string | { [key: string]: string };
 		skinDbfIds?: string[];
 		specializations?: SpecializationData[];
 	}
