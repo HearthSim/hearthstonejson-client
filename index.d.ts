@@ -104,7 +104,7 @@ declare module "hearthstonejson-client" {
 		defaultSkinDbfId?: number;
 		equipment?: EquipmentData[];
 		name?: string;
-		shortName?: string | { [key: string]: string };
+		shortName?: string;
 		skinDbfIds?: string[];
 		specializations?: SpecializationData[];
 	}
