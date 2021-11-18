@@ -11,6 +11,14 @@ declare module "hearthstonejson-client" {
 		getLatest(locale?: Locale): Promise<CardData[]>;
 	}
 
+	export class MercenariesJSON {
+		public readonly fallback: boolean;
+
+		get(build: Build, locale?: Locale): Promise<MercenaryData[]>;
+
+		getLatest(locale?: Locale): Promise<MercenaryData[]>;
+	}
+
 	export interface CardData {
 		id?: string;
 		dbfId?: number;
@@ -58,5 +66,46 @@ declare module "hearthstonejson-client" {
 		mechanics?: string[]; // enum
 		referencedTags?: string[]; // enum
 		artist?: string;
+	}
+
+	export interface EquipmentTier {
+		crafting_cost?: number;
+		dbf_id?: number;
+		tier?: number;
+	}
+
+	export interface EquipmentData {
+		id?: number;
+		tiers?: EquipmentTier[];
+	}
+
+	export interface AbilityTier {
+		crafting_cost?: number;
+		dbf_id?: number;
+		tier?: number;
+	}
+
+	export interface AbilityData {
+		id?: number;
+		name?: string | { [key: string]: string };
+		tiers?: AbilityTier[];
+	}
+
+	export interface SpecializationData {
+		id?: number;
+		name?: string | { [key: string]: string };
+		abilities?: AbilityData[];
+	}
+
+	export interface MercenaryData {
+		id?: number;
+		collectible?: boolean;
+		craftingCost?: number;
+		defaultSkinDbfId?: number;
+		equipment?: EquipmentData[];
+		name?: string;
+		shortName?: string;
+		skinDbfIds?: string[];
+		specializations?: SpecializationData[];
 	}
 }
