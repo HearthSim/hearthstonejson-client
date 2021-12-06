@@ -4,6 +4,22 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+## [1.10.0] - 2021-12-06
+### Added
+- Add mercenariesAbilityCooldown property
+
+## [1.9.0] - 2021-11-18
+### Added
+- Support for bootstrapping mercenaries.json from api.hearthstonejson
+
+## [1.8.0] - 2021-11-08
+### Added
+- Add mercenariesRole property
+
+## [1.7.0] - 2021-11-04
+### Added
+- Add isMiniSet property
+
 ## [1.6.0] - 2021-07-30
 ### Added
 - Add battlegroundsSkinParentId property
