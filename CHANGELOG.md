@@ -4,6 +4,10 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+## [1.11.0] - 2021-12-10
+### Added
+- Add hasDiamondSkin property
+
 ## [1.10.0] - 2021-12-06
 ### Added
 - Add mercenariesAbilityCooldown property
