@@ -52,11 +52,13 @@ declare module "hearthstonejson-client" {
 		spellDamage?: number;
 		armor?: number;
 		techLevel?: number;
+		isBattlegroundsPoolMinion?: boolean;
 		battlegroundsHero?: boolean;
 		battlegroundsSkinParentId?: number;
 		battlegroundsPremiumDbfId?: number;
 		battlegroundsNormalDbfId?: number;
 		battlegroundsDarkmoonPrizeTurn?: number;
+		isBattlegroundsBuddy?: boolean;
 		battlegroundsBuddyDbfId?: number;
 		mercenariesAbilityCooldown?: number;
 		mercenariesRole?: number;
