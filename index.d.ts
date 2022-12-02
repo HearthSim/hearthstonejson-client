@@ -29,7 +29,7 @@ declare module "hearthstonejson-client" {
 		set?: string;
 		cardClass?: string;
 		type?: string;
-		race?: string;
+		races?: string[];
 		multiClassGroup?: string;
 
 		// localized
