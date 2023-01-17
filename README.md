@@ -1,5 +1,5 @@
 # HearthstoneJSON Client
-[![GitHub Workflow Status (branch)](https://img.shields.io/github/workflow/status/HearthSim/npm-hearthstonejson-client/CI/master)](https://github.com/HearthSim/npm-hearthstonejson-client/actions/workflows/ci.yml)
+[![GitHub Workflow Status (branch)](https://img.shields.io/github/actions/workflow/status/HearthSim/hearthstonejson-client/ci.yml?branch=master)](https://github.com/HearthSim/npm-hearthstonejson-client/actions/workflows/ci.yml)
 [![npm](https://img.shields.io/npm/v/hearthstonejson-client.svg)](http://npmjs.com/package/hearthstonejson-client)
 
 Fetches data from [HearthstoneJSON](https://hearthstonejson.com/). Builds are cached in LocalStorage if available.
