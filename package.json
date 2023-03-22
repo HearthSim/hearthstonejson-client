@@ -6,9 +6,9 @@
     "hearthstone",
     "hsjson"
   ],
-  "homepage": "https://github.com/HearthSim/npm-hearthstonejson-client#readme",
+  "homepage": "https://github.com/HearthSim/hearthstonejson-client#readme",
   "bugs": {
-    "url": "https://github.com/HearthSim/npm-hearthstonejson-client/issues"
+    "url": "https://github.com/HearthSim/hearthstonejson-client/issues"
   },
   "license": "ISC",
   "author": "Benedict Etzel <benedict@hearthsim.net>",
@@ -17,7 +17,7 @@
   "types": "./index.d.ts",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/HearthSim/npm-hearthstonejson-client.git"
+    "url": "git+https://github.com/HearthSim/hearthstonejson-client.git"
   },
   "scripts": {
     "prepublishOnly": "rollup -c",
