@@ -66,6 +66,7 @@ declare module "hearthstonejson-client" {
 		hideStats?: boolean;
 		hideCost?: boolean;
 		isMiniSet?: boolean;
+		heroPowerDbfId?: number;
 
 		classes?: string[]; // enum
 		mechanics?: string[]; // enum
