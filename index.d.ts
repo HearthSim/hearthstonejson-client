@@ -68,6 +68,7 @@ declare module "hearthstonejson-client" {
 		isMiniSet?: boolean;
 		heroPowerDbfId?: number;
 		countAsCopyOfDbfId?: number;
+		runeCost?: { blood?: number; frost?: number; unholy?: number };
 
 		classes?: string[]; // enum
 		mechanics?: string[]; // enum
