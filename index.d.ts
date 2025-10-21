@@ -58,6 +58,7 @@ declare module "hearthstonejson-client" {
 		battlegroundsPremiumDbfId?: number;
 		battlegroundsNormalDbfId?: number;
 		battlegroundsDarkmoonPrizeTurn?: number;
+		battlegroundsRelatedCard?: number;
 		isBattlegroundsBuddy?: boolean;
 		battlegroundsBuddyDbfId?: number;
 		mercenariesAbilityCooldown?: number;
